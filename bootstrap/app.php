@@ -14,6 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'admin.auth' => \App\Http\Middleware\AuthMiddleware::class,
         ]);
+        $middleware->trustProxies(at: "*");
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
